@@ -28,6 +28,10 @@ gem 'rack-cors'
 gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
+  # Use RSpec for specs
+  gem 'rspec-rails', '>= 3.5.0'
+  # Use Factory Girl for generating random test data
+  gem 'factory_girl_rails'
   # Use pry as default REPL for debugging and Rails console
   gem 'pry-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
