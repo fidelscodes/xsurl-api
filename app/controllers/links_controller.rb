@@ -21,9 +21,6 @@ class LinksController < ApplicationController
   # POST /links
   def create
     @link = Link.new(link_params)
-    hostname = request.protocol + request.host_with_port
-    @link.shorten(hostname)
-
     if @link.save
       render json: @link, status: :created, location: @link
     else
@@ -53,6 +50,6 @@ class LinksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def link_params
-      params.require(:link).permit(:user_id, :url, :short_url, :random_hex_string, :description)
+      params.permit(:user_id, :url, :short_url, :random_hex_string, :description)
     end
 end
