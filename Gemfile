@@ -28,6 +28,7 @@ gem 'rack-cors'
 gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
+  gem 'figaro'
   # Use RSpec for specs
   gem 'rspec-rails', '>= 3.5.0'
   # Use Factory Girl for generating random test data
